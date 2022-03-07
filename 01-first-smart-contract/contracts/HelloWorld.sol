@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 // tell Solidity, what compiler you expect
 pragma solidity ^0.8.0;
 
