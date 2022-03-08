@@ -1,3 +1,4 @@
+import "@nomiclabs/hardhat-waffle";
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
