@@ -6,9 +6,14 @@ import "hardhat/console.sol";
 contract Counter {
     uint256 counter;
 
-    function count() public returns (uint256) {
+    // write state
+    function count() public {
         counter++;
         console.log("Counter : ", counter);
+    }
+
+    // read state
+    function getCounter() public view returns (uint256) {
         return counter;
     }
 }

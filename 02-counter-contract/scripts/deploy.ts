@@ -13,7 +13,8 @@ async function deploy() {
 
 // @ts-ignore
 async function count(counter) {
-    console.log("Counter from typescript : ", await counter.count());
+    await counter.count();
+    console.log("Counter from typescript : ", await counter.getCounter());
 }
 
 deploy().then(count);
