@@ -34,7 +34,7 @@ async function getContract() {
             "function count() public",
             "function getCounter() public view returns (uint256)",
         ], // abi
-        provider
+        provider.getSigner()
     );
 
     const el = document.createElement("div");
@@ -45,7 +45,8 @@ async function getContract() {
     const button = document.createElement("button");
     button.innerText = "increment";
     button.onclick = async function () {
-        await contract.count();
+        const tx = await contract.count();
+        await tx.wait();
         setCounter();
     }
     document.body.appendChild(el);
