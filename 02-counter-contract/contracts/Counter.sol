@@ -6,10 +6,13 @@ import "hardhat/console.sol";
 contract Counter {
     uint256 counter;
 
+    event CounterInc(uint256 counter);
+
     // write state
     function count() public {
         counter++;
         console.log("Counter : ", counter);
+        emit CounterInc(counter);
     }
 
     // read state
