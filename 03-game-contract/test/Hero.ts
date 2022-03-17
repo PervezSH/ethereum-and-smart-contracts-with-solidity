@@ -16,6 +16,9 @@ describe("Hero", function() {
     before(async function () {
         hero = await deployHero();
     });
+    it("should get a zero hero array", async function () {
+        expect(await hero.getHeroes()).to.deep.equal([]);
+    })
     it("should fail at creating hero cause of payment", async function () {
         let e : any;
         try {
