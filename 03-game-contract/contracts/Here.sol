@@ -23,6 +23,26 @@ contract Hero {
             );
     }
 
+    function getStrength(uint256 hero) public pure returns (uint32) {
+        return uint32((hero >> 2) & 0x1F);
+    }
+
+    function getHealth(uint256 hero) public pure returns (uint32) {
+        return uint32((hero >> 7) & 0x1F);
+    }
+
+    function getDexterity(uint256 hero) public pure returns (uint32) {
+        return uint32((hero >> 12) & 0x1F);
+    }
+
+    function getIntellect(uint256 hero) public pure returns (uint32) {
+        return uint32((hero >> 17) & 0x1F);
+    }
+
+    function getMagic(uint256 hero) public pure returns (uint32) {
+        return uint32((hero >> 22) & 0x1F);
+    }
+
     function createHero(Class class) public payable {
         require(msg.value >= 0.05 ether, "Please send more money!!!");
         // strength, health, intellect, magic, dexterity
@@ -30,9 +50,9 @@ contract Hero {
         uint256[] memory stats = new uint256[](5);
         stats[0] = 2; // strength
         stats[1] = 7; // health
-        stats[2] = 12; // intellect
-        stats[3] = 17; // magic
-        stats[4] = 22; // dexterity
+        stats[2] = 12; // dexterity
+        stats[3] = 17; // intellect
+        stats[4] = 22; // magic
 
         uint256 len = 5;
         uint256 hero = uint256(class);
