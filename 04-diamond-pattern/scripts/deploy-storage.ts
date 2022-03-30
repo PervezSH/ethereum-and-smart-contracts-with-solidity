@@ -25,6 +25,12 @@ async function storage() {
     const d = await deployContract("D", c.address);
 
     await printStorage(d, "D", 3);
+    console.log("------------------");
+    await c.setA(0x15);
+    await printStorage(d, "D", 3);
+    console.log("------------------");
+    await d.setB(0x25);
+    await printStorage(d, "D", 3);
 }
 
 storage();
