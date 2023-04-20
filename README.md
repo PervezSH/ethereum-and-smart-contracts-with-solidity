@@ -1,6 +1,6 @@
 # Ethereum and Smart Contracts with Solidity
 
-A collection of projects and resources to help you learn about creating and deploying smart contracts on Ethereum using Solidity.
+A collection of projects and resources to learn about creating and deploying smart contracts on Ethereum using Solidity.
 
 It also covers how to communicate with smart contracts from Node.js and browsers, as well as more advanced concepts such as memory layout, delegate calls, and fallback functions.
 
